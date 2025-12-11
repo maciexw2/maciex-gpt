@@ -1,0 +1,161 @@
+@import url("https://fonts.cdnfonts.com/css/inter");
+body {
+  margin: 0;
+  background: #0f0f0f;
+  font-family: "Inter", sans-serif;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --kolorekniebieski: #153e74;
+}
+.wersjegpt-box {
+  position: absolute;
+  top: 3vw;
+
+  font-size: 2vw;
+  font-weight: 700;
+  color: var(--kolorekniebieski);
+  user-select: none;
+}
+
+.model-selected {
+  padding: 0.4vw 1vw;
+  background: #0f0f0f;
+  border: 0.15vw solid #1b1b1b83;
+  border-radius: 0.6vw;
+  cursor: pointer;
+}
+
+.model-list {
+  display: none;
+  margin-top: 0.4vw;
+  background: #0f0f0f;
+  border: 0.15vw solid #1b1b1b83;
+  border-radius: 0.6vw;
+  overflow: hidden;
+}
+
+.model-list div {
+  padding: 0.6vw 1vw;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.model-list div:hover {
+  background: #1a1a1a;
+}
+
+.chat {
+  width: 380px;
+  height: 600px;
+  background: #1b1b1b;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 20px 5px #1b1b1b;
+}
+
+.messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.msg {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  animation: fade 0.25s ease;
+}
+
+.user {
+  background: var(--kolorekniebieski);
+  align-self: flex-end;
+  color: white;
+}
+
+.bot {
+  background: #262626;
+  align-self: flex-start;
+  color: #e2e2e2;
+}
+
+.input-box {
+  padding: 12px;
+  background: #111;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  background: #222;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+}
+
+button {
+  background: var(--kolorekniebieski);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.loading {
+  width: 40px;
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.loading div {
+  width: 8px;
+  height: 8px;
+  background: #666;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+.loading div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
